@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 angular-symfony
 ===============
 
@@ -63,3 +64,6 @@ You can use this template and adapt it to your needs.
 @FlyersWeb
 
 
+=======
+# angular-symfony-master
+>>>>>>> 6468c57986a3a8642a30c2123ed384670b41eb78

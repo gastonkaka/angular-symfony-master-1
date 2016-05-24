@@ -4,8 +4,11 @@
 !app/cache/.gitkeep
 !app/logs/.gitkeep
 
+<<<<<<< HEAD
 /app/check.php
 
+=======
+>>>>>>> 6468c57986a3a8642a30c2123ed384670b41eb78
 # Cache and logs (Symfony3)
 /var/cache/*
 /var/logs/*
@@ -18,7 +21,10 @@
 
 # Managed by Composer
 /app/bootstrap.php.cache
+<<<<<<< HEAD
 /app/SymfonyRequirements.php
+=======
+>>>>>>> 6468c57986a3a8642a30c2123ed384670b41eb78
 /var/bootstrap.php.cache
 /bin/*
 !bin/console
@@ -41,4 +47,7 @@
 
 # Composer PHAR
 /composer.phar
+<<<<<<< HEAD
 /composer.lock
+=======
+>>>>>>> 6468c57986a3a8642a30c2123ed384670b41eb78
