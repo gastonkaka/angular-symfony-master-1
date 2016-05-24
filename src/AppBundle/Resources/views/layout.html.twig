@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en-gb" class="no-js" data-ng-app="main"> <!--<![endif]-->
+
+    <head>
+        <title>angular-symfony-tutorial.</title>
+        <base href="/">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+
+      
+        <!-- this styles only adds some repairs on idevices  -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
+        <link href="{{asset('css/card.css')}}" rel="stylesheet">
+
+        <link rel="stylesheet" href="{{asset('css/font-awesome/css/font-awesome.min.css')}}">
+
+    </head>
+
+    <body>
+
+
+        <div class="site_wrapper">
+            
+            {% block content -%}
+            {% endblock %}
+          
+        </div>
+
+        <!-- ######### JS FILES ######### -->
+
+        <script src="{{ asset('bundles/app/lib/angular/angular.js') }}"></script>
+        <script src="{{ asset('bundles/app/lib/angular/angular-route.js') }}"></script>
+ <script type="text/javascript" src="{{asset('js/jquery.js')}}"></script>
+ <script type="text/javascript" src="{{asset('js/jquery-1.10.2.js')}}"></script>
+        <script src="{{asset('js/bootstrap.js')}}"></script> 
+        <script type="text/javascript">
+            window.MyApp = {};
+        </script>
+        <script src="{{ asset('bundles/app/validator.js') }}"></script>
+        <script src="{{ asset('bundles/app/App.js') }}"></script>
+
+        {% block scripts %}
+        {% endblock %}
+
+       
+    </body>
+</html>

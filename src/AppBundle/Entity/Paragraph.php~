@@ -1,0 +1,50 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Paragraph
+ *
+ * @ORM\Table(name="paragraph", indexes={@ORM\Index(name="pageId", columns={"pageId"})})
+ * @ORM\Entity
+ */
+class Paragraph
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="title", type="string", length=255, nullable=false)
+     */
+    private $title;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="content", type="text", nullable=false)
+     */
+    private $content;
+
+    /**
+     * @var \Page
+     *
+     * @ORM\ManyToOne(targetEntity="Page")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="pageId", referencedColumnName="id")
+     * })
+     */
+    private $pageid;
+
+
+}
+

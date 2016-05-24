@@ -1,0 +1,64 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Pagetitle
+ *
+ * @ORM\Table(name="pagetitle", indexes={@ORM\Index(name="pageId", columns={"pageId"})})
+ * @ORM\Entity
+ */
+class Pagetitle
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="title", type="string", length=255, nullable=false)
+     */
+    private $title;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="style", type="string", length=255, nullable=false)
+     */
+    private $style;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ordre", type="string", length=255, nullable=false)
+     */
+    private $ordre;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="orderTitle", type="integer", nullable=false)
+     */
+    private $ordertitle;
+
+    /**
+     * @var \Page
+     *
+     * @ORM\ManyToOne(targetEntity="Page")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="pageId", referencedColumnName="id")
+     * })
+     */
+    private $pageid;
+
+
+}
+

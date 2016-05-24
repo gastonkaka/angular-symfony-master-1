@@ -1,0 +1,43 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Keywords
+ *
+ * @ORM\Table(name="keywords", uniqueConstraints={@ORM\UniqueConstraint(name="keyword", columns={"keyword"})}, indexes={@ORM\Index(name="pageId", columns={"pageId"})})
+ * @ORM\Entity
+ */
+class Keywords
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="keyword", type="string", length=30, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $keyword;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="enabled", type="boolean", nullable=false)
+     */
+    private $enabled;
+
+    /**
+     * @var \Page
+     *
+     * @ORM\ManyToOne(targetEntity="Page")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="pageId", referencedColumnName="id")
+     * })
+     */
+    private $pageid;
+
+
+}
+

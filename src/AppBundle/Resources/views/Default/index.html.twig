@@ -1,0 +1,49 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+
+
+{% block content -%}
+
+    <div ng-non-bindable>
+        <div id="speciality" data-ng-controller="rootViewModel">
+            <div class="row card-1" style="background-color:#2a4852;opacity:0.8">
+                <div class="container">                
+                    <div class="row">
+                        <div class="col-md-offset-1 col-md-1 col-xs-2">
+                            <button class="btn" ng-click="viewModelHelper.refreshPage('speciality')"><i class="fa fa-home"></i></button>
+                        </div>
+                        <div class="col-md-1 col-xs-2">
+                            <button class="btn" ng-click="specialityList()"><i class="fa fa-list"></i></button>
+                        </div>
+                        <div class="col-md-3 col-xs-6">
+                            <div class="col-md-3 col-xs-6">
+                                <button class="btn" ng-click="showSpeciality()"><i class="fa fa-play"></i></button>
+                            </div>
+                            <div class="col-md-6  col-xs-6">
+                                <input type="text" id="spe" ng-model="specialityService.Id" />
+                            </div>
+                        </div>
+
+                    </div>
+                    <h2 ng-bind="pageHeading"></h2>
+
+                </div>  <!-- col-sm-4 -->
+                <div class="margin-top3"></div>
+                <div ng-view></div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ asset('bundles/app/Speciality/App.js') }}"></script>
+    <script src="{{ asset('bundles/app/Speciality/ViewModels/RootViewModel.js') }}"></script>
+    <script src="{{ asset('bundles/app/Speciality/ViewModels/SpecialityHomeViewModel.js') }}"></script>
+    <script src="{{ asset('bundles/app/Speciality/ViewModels/SpecialityListViewModel.js') }}"></script>
+    <script src="{{ asset('bundles/app/Speciality/ViewModels/SpecialityViewModel.js') }}"></script>
+    <script>
+   MyApp.rootPath = '/angular-symfony-master/web/app_dev.php/';
+   angular.bootstrap(document.getElementById("speciality"), ['speciality']);
+    </script>
+{% endblock %}    

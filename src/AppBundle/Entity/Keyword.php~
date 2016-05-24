@@ -1,0 +1,50 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Keyword
+ *
+ * @ORM\Table(name="keyword", indexes={@ORM\Index(name="pageId", columns={"pageId"})})
+ * @ORM\Entity
+ */
+class Keyword
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="keyword", type="string", length=30, nullable=false)
+     */
+    private $keyword;
+
+    /**
+     * @var array
+     *
+     * @ORM\Column(name="keyz", type="json_array", nullable=false)
+     */
+    private $keyz;
+
+    /**
+     * @var \Page
+     *
+     * @ORM\ManyToOne(targetEntity="Page")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="pageId", referencedColumnName="id")
+     * })
+     */
+    private $pageid;
+
+
+}
+
